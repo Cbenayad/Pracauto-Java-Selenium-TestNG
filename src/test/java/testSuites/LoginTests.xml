@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="LoginTestsSuite" verbose="1">
+    <test name="ValidEmailAndPassword">
+        <parameter name="email" value="hello-world@gmail.com"></parameter>
+        <parameter name="password" value="StrongPassword10?"></parameter>
+        <classes>
+            <class name="testsClasses.LoginTests">
+                <methods>
+                    <include name="positiveLoginTest"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="InvalidEmail">
+        <parameter name="login" value="unknownemail@gmail.com"></parameter>
+        <parameter name="password" value="StrongPassword10?"/>
+        <parameter name="expectedMessage" value="A user could not be found with this email address."></parameter>
+        <classes>
+            <class name="testsClasses.LoginTests">
+                <methods>
+                    <include name="negativeLoginTest"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="InvalidPassword">
+        <parameter name="login" value="hello-world@gmail.com"></parameter>
+        <parameter name="password" value="invalidPassword!"></parameter>
+        <parameter name="expectedMessage"
+                   value="the password you entered for the username hello-world@gmail.com is incorrect."></parameter>
+        <classes>
+            <class name="testsClasses.LoginTests">
+                <methods>
+                    <include name="negativeLoginTest"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="InvalidUsername">
+        <parameter name="login" value="invalidUsername"></parameter>
+        <parameter name="password" value="StrongPassword10?"/>
+        <parameter name="expectedMessage"
+                   value="the username invalidUsername is not registered on this site."></parameter>
+        <classes>
+            <class name="testsClasses.LoginTests">
+                <methods>
+                    <include name="negativeLoginTest"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="EmptyUsername">
+        <parameter name="login" value=""></parameter>
+        <parameter name="password" value="StrongPassword10?"/>
+        <parameter name="expectedMessage" value="Username is required."></parameter>
+        <classes>
+            <class name="testsClasses.LoginTests">
+                <methods>
+                    <include name="negativeLoginTest"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="EmptyPassword">
+        <parameter name="login" value="test-auto"></parameter>
+        <parameter name="password" value=""/>
+        <parameter name="expectedMessage" value="Password is required."></parameter>
+        <classes>
+            <class name="testsClasses.LoginTests">
+                <methods>
+                    <include name="negativeLoginTest"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="EmptyUsernameAndPassword">
+        <parameter name="login" value=""></parameter>
+        <parameter name="password" value=""/>
+        <parameter name="expectedMessage" value="Username is required."></parameter>
+        <classes>
+            <class name="testsClasses.LoginTests">
+                <methods>
+                    <include name="negativeLoginTest"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PasswordCaseSensitivity">
+        <parameter name="login" value="hello-world@gmail.com"></parameter>
+        <parameter name="password" value="strongPassword10?"/>
+        <parameter name="expectedMessage"
+                   value="the password you entered for the username hello-world@gmail.com is incorrect."></parameter>
+        <classes>
+            <class name="testsClasses.LoginTests">
+                <methods>
+                    <include name="negativeLoginTest"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

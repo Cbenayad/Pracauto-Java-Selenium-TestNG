@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="AccessOrdersPage" verbose="1">
+    <test name="ViewOrdersHistory">
+        <classes>
+            <class name="testsClasses.ViewOrdersHistoryTest">
+                <methods>
+                    <include name="viewOrdersHistory"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="FoundNoOrdersHistory">
+        <parameter name="email" value="chaymae-benayad@capgemini.com"></parameter>
+        <parameter name="password" value="MyStrongPassword2023!"></parameter>
+        <classes>
+            <class name="testsClasses.ViewOrdersHistoryTest">
+                <methods>
+                    <include name="foundNoOrdersHistory"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

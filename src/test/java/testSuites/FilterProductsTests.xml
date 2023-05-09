@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="FilterProductsSuite" verbose="1">
+    <test name="FilterProductsByPrice">
+        <parameter name="minPrice" value="200"></parameter>
+        <parameter name="maxPrice" value="400"></parameter>
+        <classes>
+            <class name="testsClasses.FilterProductsTests">
+                <methods>
+                    <include name="filterByPrice"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="FilterProductsByCategory">
+        <classes>
+            <class name="testsClasses.FilterProductsTests">
+                <methods>
+                    <include name="filterByCategory"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="LogoutSuite" verbose="1">
+    <test name="Logout">
+        <parameter name="email" value="hello-world@gmail.com"></parameter>
+        <parameter name="password" value="StrongPassword10?"></parameter>
+        <classes>
+            <class name="testsClasses.LogoutTest">
+            </class>
+        </classes>
+    </test>
+</suite>

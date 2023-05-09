@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="CheckoutSuite" verbose="1">
+    <test name="PaymentByBankTransfer">
+        <parameter name="firstName" value="John"></parameter>
+        <parameter name="lastName" value="Doe"></parameter>
+        <parameter name="email" value="hello-world@gmail.com"></parameter>
+        <parameter name="phone" value="0043273476532"></parameter>
+        <parameter name="country" value="France"></parameter>
+        <parameter name="address" value="10 avenue de la republique"></parameter>
+        <parameter name="postCode" value="75018"></parameter>
+        <parameter name="city" value="Paris"></parameter>
+        <classes>
+            <class name="testsClasses.ProceedToCheckoutTests">
+                <methods>
+                    <include name="paymentByDirectBankTransfer"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PaymentByCheck">
+        <parameter name="firstName" value="John"></parameter>
+        <parameter name="lastName" value="Doe"></parameter>
+        <parameter name="email" value="hello-world@gmail.com"></parameter>
+        <parameter name="phone" value="0043273476532"></parameter>
+        <parameter name="country" value="France"></parameter>
+        <parameter name="address" value="10 avenue de la republique"></parameter>
+        <parameter name="postCode" value="75018"></parameter>
+        <parameter name="city" value="Paris"></parameter>
+        <classes>
+            <class name="testsClasses.ProceedToCheckoutTests">
+                <methods>
+                    <include name="paymentByCheck"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PaymentByCash">
+        <parameter name="firstName" value="John"></parameter>
+        <parameter name="lastName" value="Doe"></parameter>
+        <parameter name="email" value="hello-world@gmail.com"></parameter>
+        <parameter name="phone" value="0043273476532"></parameter>
+        <parameter name="country" value="France"></parameter>
+        <parameter name="address" value="10 avenue de la republique"></parameter>
+        <parameter name="postCode" value="75018"></parameter>
+        <parameter name="city" value="Paris"></parameter>
+        <classes>
+            <class name="testsClasses.ProceedToCheckoutTests">
+                <methods>
+                    <include name="paymentByCash"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

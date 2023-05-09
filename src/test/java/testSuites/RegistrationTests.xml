@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="RegistrationTestsSuite" verbose="1">
+   <test name="ValidEmailAndPassword">
+        <parameter name="email" value="chaymae.benayad@gmail.com"></parameter>
+        <parameter name="password" value="MyStrongPassword2023!"/>
+        <classes>
+            <class name="testsClasses.RegistrationTests">
+                <methods>
+                    <include name="registerTest"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ExistentEmail">
+        <parameter name="email" value="chaymae-benayad@capgemini.com"></parameter>
+        <parameter name="password" value="MyStrongPassword20!"/>
+        <parameter name="expectedMessage"
+                   value="An account is already registered with your email address. Please login."/>
+        <classes>
+            <class name="testsClasses.RegistrationTests">
+                <methods>
+                    <include name="existentEmail"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="InvalidEmail">
+        <parameter name="email" value="invalidemailgmail.com"></parameter>
+        <parameter name="password" value="MyStrongPassword20!"/>
+        <classes>
+            <class name="testsClasses.RegistrationTests">
+                <methods>
+                    <include name="invalidEmail"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="InvalidPassword">
+        <parameter name="email" value="chaymae.benayad@gmail.com"></parameter>
+        <parameter name="password" value="invalidpassword"></parameter>
+        <parameter name="expectedMessage" value="The password should be at least seven characters long."></parameter>
+        <classes>
+            <class name="testsClasses.RegistrationTests">
+                <methods>
+                    <include name="invalidPassword"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

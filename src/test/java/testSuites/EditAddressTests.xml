@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="EditAddressSuite" verbose="1">
+    <test name="EditBillingAddress">
+        <parameter name="firstName" value="John"></parameter>
+        <parameter name="lastName" value="Doe"></parameter>
+        <parameter name="email" value="hello-world@gmail.com"></parameter>
+        <parameter name="phone" value="0043273476532"></parameter>
+        <parameter name="country" value="France"></parameter>
+        <parameter name="address" value="10 avenue de la republique"></parameter>
+        <parameter name="postCode" value="75018"></parameter>
+        <parameter name="city" value="Paris"></parameter>
+        <parameter name="expectedMessage" value="Address changed successfully."></parameter>
+        <classes>
+            <class name="testsClasses.EditAddressTest">
+                <methods>
+                    <include name="editBillingAddress"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="EmptyFieldsBillingAddress">
+        <parameter name="firstName" value=""></parameter>
+        <parameter name="lastName" value=""></parameter>
+        <parameter name="email" value=""></parameter>
+        <parameter name="phone" value=""></parameter>
+        <parameter name="country" value=""></parameter>
+        <parameter name="address" value=""></parameter>
+        <parameter name="postCode" value=""></parameter>
+        <parameter name="city" value=""></parameter>
+        <parameter name="expectedMessage"
+                   value="First Name is a required field.Last Name is a required field.Email Address is a required field.Phone is a required field.Address is a required field.Town / City is a required field.Postcode / ZIP is a required field."></parameter>
+        <classes>
+            <class name="testsClasses.EditAddressTest">
+                <methods>
+                    <include name="editBillingAddressWithEmptyFields"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="EditShippingAddress">
+        <parameter name="firstName" value="John"></parameter>
+        <parameter name="lastName" value="Doe"></parameter>
+        <parameter name="country" value="France"></parameter>
+        <parameter name="address" value="10 avenue de la republique"></parameter>
+        <parameter name="postCode" value="75018"></parameter>
+        <parameter name="city" value="Paris"></parameter>
+        <parameter name="expectedMessage" value="Address changed successfully."></parameter>
+        <classes>
+            <class name="testsClasses.EditAddressTest">
+                <methods>
+                    <include name="editShippingAddress"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="EmptyFieldsShippingAddress">
+        <parameter name="firstName" value=""></parameter>
+        <parameter name="lastName" value=""></parameter>
+        <parameter name="email" value=""></parameter>
+        <parameter name="phone" value=""></parameter>
+        <parameter name="country" value=""></parameter>
+        <parameter name="address" value=""></parameter>
+        <parameter name="postCode" value=""></parameter>
+        <parameter name="city" value=""></parameter>
+        <parameter name="expectedMessage"
+                   value="First Name is a required field.Last Name is a required field.Address is a required field.Town / City is a required field.Postcode / ZIP is a required field."></parameter>
+        <classes>
+            <class name="testsClasses.EditAddressTest">
+                <methods>
+                    <include name="editShippingAddressWithEmptyFields"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

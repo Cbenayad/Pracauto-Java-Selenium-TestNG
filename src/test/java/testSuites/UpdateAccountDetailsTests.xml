@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="AccountDetailsUpdate" verbose="1">
+    <test name="PositiveAccountDetailsUpdate">
+        <parameter name="firstName" value="Chaymae"></parameter>
+        <parameter name="lastName" value="Benayad"></parameter>
+        <parameter name="email" value="hello-world@gmail.com"></parameter>
+        <parameter name="password" value="StrongPassword10?"></parameter>
+        <parameter name="newPswd" value="NewStrongPassword10?"></parameter>
+        <parameter name="confirmPswd" value="NewStrongPassword10?"></parameter>
+        <parameter name="expectedMessage" value="Account details changed successfully."></parameter>
+        <classes>
+            <class name="testsClasses.UpdateAccountDetailsTest">
+                <methods>
+                    <include name="updateAccountPassword"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="InvalidCurrentPassword">
+        <parameter name="firstName" value="Chaymae"></parameter>
+        <parameter name="lastName" value="Benayad"></parameter>
+        <parameter name="email" value="hello-world@gmail.com"></parameter>
+        <parameter name="loginPassword" value="NewStrongPassword10?"></parameter>
+        <parameter name="password" value="InvalidCurrPassword!"></parameter>
+        <parameter name="newPswd" value="NewPassword10?"></parameter>
+        <parameter name="confirmPswd" value="NewPassword10?"></parameter>
+        <parameter name="expectedMessage" value="Your current password is incorrect."></parameter>
+        <classes>
+            <class name="testsClasses.UpdateAccountDetailsTest">
+                <methods>
+                    <include name="failedUpdateAccountPassword"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="NewPasswordsNotMatching">
+        <parameter name="firstName" value="Chaymae"></parameter>
+        <parameter name="lastName" value="Benayad"></parameter>
+        <parameter name="email" value="hello-world@gmail.com"></parameter>
+        <parameter name="loginPassword" value="NewStrongPassword10?"></parameter>
+        <parameter name="password" value="NewStrongPassword10?"></parameter>
+        <parameter name="newPswd" value="NewPassword23!"></parameter>
+        <parameter name="confirmPswd" value="ConfirmPassword23!"></parameter>
+        <parameter name="expectedMessage" value="New passwords do not match."></parameter>
+        <classes>
+            <class name="testsClasses.UpdateAccountDetailsTest">
+                <methods>
+                    <include name="failedUpdateAccountPassword"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

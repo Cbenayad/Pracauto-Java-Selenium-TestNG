@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="AddProductSuite" verbose="1">
+    <test name="AddProductToBasketFromImage">
+        <parameter name="quantity" value="2"></parameter>
+        <classes>
+            <class name="testsClasses.AddProductToBasketTests">
+                <methods>
+                    <include name="AddProductFromImage"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="AddProductToBasketViaAddToBasketBtn">
+        <classes>
+            <class name="testsClasses.AddProductToBasketTests">
+                <methods>
+                    <include name="AddProductViaAddButton"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+   <test name="AddProductToBasketFromTitle">
+        <parameter name="quantity" value="1"></parameter>
+        <classes>
+            <class name="testsClasses.AddProductToBasketTests">
+                <methods>
+                    <include name="AddProductFromTitle"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="AddProductToBasketFromPrice">
+        <parameter name="quantity" value="3"></parameter>
+        <classes>
+            <class name="testsClasses.AddProductToBasketTests">
+                <methods>
+                    <include name="AddProductFromPrice"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="AddProductToBasketWithZeroAsQuantity">
+        <parameter name="quantity" value="0"></parameter>
+        <classes>
+            <class name="testsClasses.AddProductToBasketTests">
+                <methods>
+                    <include name="addProductWithZeroAsQuantity"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
