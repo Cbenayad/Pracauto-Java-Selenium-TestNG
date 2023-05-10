@@ -8,7 +8,7 @@ In order to utilise this project you need to have the following tools installed 
 - Maven 3
 - Google Chrome Browser
 - Java 8 or higher (I used Java 17)
-- Eclipse or IntelliJ IDEA (I am using IntelliJ IDEA)
+- Eclipse or IntelliJ IDEA (I used IntelliJ IDEA)
 
 ## Dependencies
 - Selenium Java 3.14.0
